@@ -1,10 +1,33 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body class="d-flex justify-content-center">
-<span>Hello there!</span>
-</body>
-</html>
+@extends('layouts.app')
+
+@section('content')
+    <div id="app">
+        <div id="content">
+            <div class="d-flex justify-content-center">
+                <div class="my-5">
+                    <span class="fw-boldest fs-1" v-text="'Hello there'"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+@section('js')
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    message: 'Hola, Vue!'
+                }
+            },
+            mounted() {
+            },
+            methods: {
+            },
+            watch: {
+            }
+        });
+
+        app.mount('#app');
+
+    </script>
+@endsection
