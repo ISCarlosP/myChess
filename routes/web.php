@@ -12,7 +12,5 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+//Ruta para cargar los datos de la landing page
+Route::get('/', [\App\Http\Controllers\WelcomeController::class, 'loadWelcomeData']);
